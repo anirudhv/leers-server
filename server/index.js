@@ -1,11 +1,13 @@
 const express = require("express");
 const jsonfile = require('jsonfile');
-var randomWords = require('better-random-words');
-
+const randomWords = require('better-random-words');
+const cors = require('cors');
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
+
+app.use(cors());
 
 app.get("/generateList", (req, res)  => {
 
